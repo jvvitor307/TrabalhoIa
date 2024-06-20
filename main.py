@@ -11,7 +11,7 @@ while(not cv2.waitKey(20) & 0xFF == ord('q')):
     for x, y, w, h in faces:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0))
     cv2.imshow('frame', frame)
-frame.save("/")
+cv2.imwrite("starry_night222.png", frame)
 cap.release()
 cv2.destroyAllWindows()
 cv2.waitKey(1)
