@@ -1,10 +1,7 @@
-from face_lib import face_lib
-import cv2
-FL = face_lib()
+import tensorflow as tf
+import keras
+from untitled1 import DistanceLayer
+custom_objects = {"DistanceLayer": DistanceLayer}
 
-
-def verificacao(img_to_verify, gt_image):
-    saida = cv2.imread(img_to_verify)
-    base = cv2.imread(gt_image)
-    face_exist, no_faces_detected = FL.recognition_pipeline(saida, base, threshold = 0.95)
-    return face_exist
+with keras.saving.custom_object_scope(custom_objects):
+    reconstructed_model = keras.models.load_model("faceRecognition.keras")
