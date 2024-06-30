@@ -1,0 +1,13 @@
+click @ file:///home/conda/feedstock_root/build_artifacts/click_1692311806742/work
+cmake==3.22.5
+dlib==19.24.0
+face-recognition @ file:///home/conda/feedstock_root/build_artifacts/face_recognition_1619808233029/work
+face-recognition-models @ file:///home/conda/feedstock_root/build_artifacts/face_recognition_models_1595707436534/work
+numpy==1.26.3
+opencv-python==4.10.0.84
+pandas==2.2.2
+pillow @ file:///home/conda/feedstock_root/build_artifacts/pillow_1712154467551/work
+python-dateutil==2.9.0.post0
+pytz==2024.1
+six==1.16.0
+tzdata==2024.1
