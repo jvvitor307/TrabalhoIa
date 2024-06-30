@@ -9,7 +9,7 @@ import os
 
 def cadastrar_aluno(aluno):
     nome = input('Digite o nome do aluno: ')
-    caminho_foto = cadastrar_foto_aluno()
+    caminho_foto = cadastrar_foto_aluno(nome)
     fotoV = foto_valida(caminho_foto)
     if fotoV:
         aluno['nome'].append(nome)
@@ -32,7 +32,7 @@ def foto_valida(caminho_foto, cont=0):
         return foto_valida(caminho_foto, cont)
 
 
-def cadastrar_foto_aluno():
+def cadastrar_foto_aluno(nomealuno):
     # Cria uma instância da janela Tkinter
     root = tk.Tk()
     root.withdraw()  # Esconde a janela principal
@@ -53,8 +53,7 @@ def cadastrar_foto_aluno():
             os.makedirs(diretorio_destino)
 
         # Salva a imagem no diretório desejado
-        nome_arquivo = os.path.basename(caminho_arquivo)  # Pega o nome do arquivo
-        caminho_destino = os.path.join(diretorio_destino, nome_arquivo)
+        caminho_destino = os.path.join(diretorio_destino, f"{nomealuno}.jpg")
         imagem.save(caminho_destino)
         print(f"Foto do aluno cadastrada com sucesso: {caminho_destino}")
         return caminho_destino
